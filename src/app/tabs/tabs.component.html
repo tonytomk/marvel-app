@@ -1,0 +1,8 @@
+<div>
+  <ul class="nav nav-tabs" >
+    <li role="presentation" [ngClass]="{active: chosenList === 'all'}"><a (click)="onChoose('all')"  style="cursor: pointer;">All</a></li>
+    <li role="presentation" [ngClass]="{active: chosenList === 'heroes'}"><a (click)="onChoose('heroes')"  style="cursor: pointer;">Heroes</a></li>
+    <li role="presentation" [ngClass]="{active: chosenList === 'villains'}"><a (click)="onChoose('villains')"  style="cursor: pointer;">Villans</a></li>
+  </ul>
+  <app-list [characters] = "getCharacters()" (sideAssigned)="onSideChosen($event)"></app-list>
+</div>
